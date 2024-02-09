@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TERMINAL=$(echo -e "alacritty\nkitty\nst\nurxvt" | dmenu -l 10 -i -p "Terminal:")
+
+case $TERMINAL in 
+    alacritty)'alacritty' ;;
+    kitty)'kitty' ;;
+	st)'st' ;;
+	urxvt)'urxvt' ;;
+esac

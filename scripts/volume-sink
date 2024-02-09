@@ -1,0 +1,8 @@
+#!/bin/sh
+
+default_sink=$(echo -e "SPEAKERS\nHEADPHONES" | dmenu -l 2 -i -p "Which sink?")
+
+case $default_sink in
+	SPEAKERS) pacmd set-default-sink alsa_output.usb-M-Audio_M-Track-00.analog-stereo ;;
+	HEADPHONES) pacmd set-default-sink alsa_output.usb-GeneralPlus_USB_Audio_Device-00.analog-stereo ;;
+esac

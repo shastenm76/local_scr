@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+cd ~/.local/bin/scripts/dmenu && doc=$(ls | less | dmenu -l 20 -i -p 'Dmenu Scripts: ')
+alacritty -e nvim $doc

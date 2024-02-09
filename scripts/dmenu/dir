@@ -1,0 +1,20 @@
+#!/bin/bash
+TERMINAL="st -e"
+
+FREQUENT=$(echo -e "DWM\nDmenu\nDmenu-scripts\nNeovim-lua\nNeovim\nNordVPN\nOpenbox\nPicom\nQtile\nScripts" | dmenu -l 10 -i -p "Files:")
+
+case $FREQUENT in 
+    DWM)cd ~/.config/dwm; $TERMINAL ;;
+    Dmenu)cd ~/.config/dmenu; $TERMINAL  ;;
+    Dmenu-scripts)cd ~/.local/bin/scripts/dmenu; $TERMINAL ;;
+    Neovim-lua)cd ~/.config/nvim/lua; $TERMINAL ;;
+    Neovim)cd ~/.config/nvim; $TERMINAL;;
+    NordVPN)cd ~/.config/nordvpn; $TERMINAL ;;
+    Openbox)cd ~/.config/openbox; $TERMINAL ;;
+    Picom)cd ~/.config/picom; $TERMINAL ;;
+    Qtile)cd ~/.config/qtile; $TERMINAL ;;
+    Scripts)cd ~/.local/bin/scripts; $TERMINAL ;;
+esac 
+
+
+

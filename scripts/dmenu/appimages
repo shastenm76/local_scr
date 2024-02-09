@@ -1,0 +1,7 @@
+#!/bin/bash
+
+filename='/home/shasten/.local/bin/app-image';
+
+cd $filename && cmd=$(find -name "*.AppImage" | dmenu -l 20 -i -p "App:")
+
+./$cmd

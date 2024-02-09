@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# Zenity USB ISO Writer Script
+#
+
+# Display file selection dialog for ISO files
+iso=$(zenity --title "Select and ISO file" --file-selection --file-filter="*.iso")
+
+# Verify that an ISO file was selected
+if [[ ! "$iso" =~ \.iso$ ]]; then
+    zenity --info --title "Error" --width=300\
+    --text "Please select and ISO file to write!"
+    exit 1
+fi
+
+# Initialize array counter
+let i=0
+
+# Iterate over each sd block device
+for device in /sys/block/sd*; do
+
+    # Append the device name to disks array
+    disks[$i]="/dev/$(basename "$device")"
+
+    # Increment array counter
+    let "i++"
+
+    # Append the size in human readable format to disks array
+    disks[$i]=$(cat "$device/size"|numfmt --to=iec-i --suffix=B --padding=7)
+
+    # Increment array counter
+    let "i++"
+
+done
+
+# Create a list of the sd block devices and sizes
+disk=$(zenity --list --title "Choose a disk to write"\
+ --column "Disk" --column "Size" "${disks[@]}")
+
+# Verify that a device was selected
+if [[ "${device[@]}" =~ $disk ]]; then
+    zenity --info --title "Error" --width 300\
+    --text "Please select a device to write to!"
+    exit 1
+fi
+
+# Prompt for confirmation
+conf=$(zenity --question --title "Confirm the write" --width 500\
+    --text "Write $iso to $disk?")
+
+# Check confirmation
+case $? in
+
+    # if Yes:
+    0) sudo cp "$iso" "$disk";;
+
+    #if No:
+    1) exit 1;;
+
+esac

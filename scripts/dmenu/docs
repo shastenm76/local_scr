@@ -1,0 +1,9 @@
+#!/bin/sh
+
+##cd ~/.docs && DOCS=$(ls -a *.pdf | less | dmenu -l 10 -i -p "Cual Manual Quieres Ver?")
+
+DIR=$(find ~/.docs -type d| dmenu -l 20 -i -p "Directory: ")
+cd $DIR; DOCS=$(find -name '*.pdf' | dmenu -l 20 -i -p "Which notes would you like to see?") 
+
+zathura $DOCS
+

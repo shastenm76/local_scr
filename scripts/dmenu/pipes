@@ -1,0 +1,20 @@
+#!/bin/bash
+
+declare options=("Four
+Five
+Six
+Seven
+Eight")
+
+choice=$(echo "${options[@]}" | dmenu -i -p 'PIPES:')
+
+case "$choice" in
+	Four) bash-pipes -t 4 -p 8 ;;
+	Five) bash-pipes -t 5 -p 8 ;;
+	Six) bash-pipes -t 6 -p 8 ;;
+	Seven) bash-pipes -t 7 -p 8 ;;
+	Eight) bash-pipes -t 8 -p 8 ;;
+
+esac
+
+ 

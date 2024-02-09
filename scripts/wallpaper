@@ -1,0 +1,4 @@
+#!/bin/sh
+
+watch -n 600 feh --randomize --bg-fill /usr/share/backgrounds/* &>/dev/null &
+

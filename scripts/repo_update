@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#mkdir -pv /tmp/pkg
+
+#sleep 10
+
+dir=/home/tuxer/Desktop/pkg/pkgs
+dir_1=/var/cache/pacman/pkg
+pkg=$(find $dir -name "*.zst")
+pkgs=$(find $dir_1 -name "*.zst")
+
+for name in $pkg
+do
+  if $dir/* == $dir_1/* ; then
+    ls $name
+    fi
+done
+
+##if [[ -f '$dir' && -f '$dir_1' ]]; then
+## mv * /tmp/pkg
+##else
+##  echo "Repository is already updated"
+##fi
+#
+##if [ -e $pkg -a -e $pkgs] ; then mv /tmp/pkg ; else echo "repo is updated" ; fi
+
+
+

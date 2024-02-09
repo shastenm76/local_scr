@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pdf=$(find ~/pdf -name "*.pdf" | less | dmenu -l 40 -i -p "Choose pdf:")
+evince "$pdf"

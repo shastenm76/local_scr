@@ -1,0 +1,4 @@
+#!/bin/bash
+#Todavia estoy trabajando en esa
+[ $(echo -e "No\nYes" | dmenu -i -p "Estas seguro?") ] | [ "$Yes" | "sudo mkdosfs -F 32 -I /dev/sdb1" ]
+

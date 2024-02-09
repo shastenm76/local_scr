@@ -1,0 +1,12 @@
+#!/bin/sh
+
+script=$(echo "APP\nBrowser\nChat\nTerminal" | dmenu -l 10 -i -p "Elige Script:")
+
+case $script in 
+	APP) /bin/sh ~/.local/bin/scripts/dmenu/bash/menu/app ;;
+	Browser) /bin/sh ~/.local/bin/scripts/dmenu/bash/menu/browser ;;
+	Terminal) /bin/sh ~/.local/bin/scripts/dmenu/bash/menu/terminal ;;
+esac 
+
+
+

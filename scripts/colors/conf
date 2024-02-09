@@ -1,0 +1,150 @@
+#!/bin/bash
+
+>~/.local/bin/scripts/colors/color
+#cat > ~/.Xdefaults <<EOF
+
+#colors=$(echo -e "Black\nWhite\nGreen\nBlue\nPurple\nPink\nYellow\nOrange\nGrey\nBrown\nRed")
+#shade=$(echo -e "Dark\nNormal\nLight")
+
+declare colors=("Black
+White
+Green
+Blue
+Purple
+Pink
+Yellow
+Orange
+Grey
+Brown
+Red")
+
+declare shade=("Dark
+Normal
+Light")
+
+#Colores
+#black
+blk_dark="#000000"
+blk_normal="#000000"
+blk_light="#000000"
+
+read -p "Dark Normal or Light?"
+while $colors="$black"
+do
+case "$shade" in
+	Dark)"blk_dark" ;;
+	Normal)"blk_normal" ;;
+	Light)"blk_light" ;;
+esac
+
+#case "$shade" in white
+#	$dark)#DBD1D1 ;;
+#	$normal)#F1F1F1 ;;
+#	$light)#FFFFFF;;
+#esac
+
+#case "$shade" in green
+#	$dark)#0C260C;;
+#	$normal)#237823 ;;
+#	$light)#028902 ;;
+#esac
+
+#case "$shade" in blue
+#	$dark)#020028 ;;
+#	$normal)#1209B1 ;;
+#	$light)#268EFF ;;
+#esac
+
+#case "$shade" in purple
+#	$dark)#1B1849 ;;
+#	$normal)#5E005E ;;
+#	$light)#3C368B ;;
+#esac
+
+#case "$shade" in pink
+#	$dark)#A71AA5 ;;
+#	$normal)#F41AF2 ;;
+#	$light)#F38CF2 ;;
+#esac
+
+#case "$shade" in yellow
+#	$dark)#7E7E1B ;;
+#	$normal)#A5A518 ;;
+#	$light)#B9CA4A ;;
+#esac
+
+#case "$shade" in orange
+#	$dark)#986200 ;;
+#	$normal)#C07725 ;;
+#	$light)#C48C29 ;;
+#esac
+
+#case "$shade" in grey
+#	$dark)#292929 ;;
+#	$normal)#353535 ;;
+#	$light)#6B6B6B ;;
+#esac
+
+#case "$shade" in brown
+#	$dark)#332112 ;;
+#	$normal)#433428 ;;
+#	$light)#8D6A4D ;;
+#esac
+
+#case "$shade" in red
+#	$dark)#5D110F ;;
+#	$normal)#090909 ;;
+#	$light)#FF0600 ;;
+#esac
+
+read -p "Foreground Color?" && echo "*.foreground: ',' $color $shade" > ~/.Xdefaults
+
+background (){
+	echo "*.background: ',' $color $shade" > ~/.Xdefaults
+}
+cursor (){
+	echo "*.cursorColor: ',' $color $shade" > ~/.Xdefaults
+}
+negro (){
+	echo -e "Negro (0,8)"
+	echo "*.color0: ',' $color $shade" > ~/.Xdefaults
+	echo "*.color8: ',' $color $shade" > ~/.Xdefaults
+}
+rojo (){
+echo -e "Rojo (1,9)"
+echo "*.color1: ',' $color $shade" > ~/.Xdefaults
+echo "*.color9: ',' $color $shade" > ~/.Xdefaults
+}
+verde (){
+echo -e "Verde (2,10)"
+echo "*.color2: ',' $color $shade" > ~/.Xdefaults
+echo "*.color10: ',' $color $shade" > ~/.Xdefaults
+}
+amarillo (){
+echo -e "Yellow (3,11)"
+echo "*.color3: ',' $color $shade" > ~/.Xdefaults
+echo "*.color11: ',' $color $shade" > ~/.Xdefaults
+}
+azule (){
+echo -e "Blue (4,12)"
+echo "*.color4: ',' $color $shade" > ~/.Xdefaults
+echo "*.color12: ',' $color $shade" > ~/.Xdefaults
+}
+morada() {
+echo -e "Magenta (5,13)"
+echo "*.color5: ',' $color $shade" > ~/.Xdefaults
+echo "*.color13: ',' $color $shade" > ~/.Xdefaults
+}
+turquesa (){
+echo -e "Cyan (6,14)"
+echo "*.color6: ',' $color $shade" > ~/.Xdefaults
+echo "*.color14: ',' $color $shade" > ~/.Xdefaults
+}
+blanca (){
+echo -e "White (7,15)"
+echo -e "*.color7: ',' $color $shade" > ~/.Xdefaults
+echo -e "*.color15: ',' $color $shade" > ~/.Xdefaults
+}
+
+
+

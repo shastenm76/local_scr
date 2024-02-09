@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dir=$(find ~/.pdf -type d | dmenu -l 40)
+cd $dir && pdf=$(find -name "*.pdf" | less | dmenu -l 40 -i -p "Choose pdf:")
+zathura $dir/$pdf

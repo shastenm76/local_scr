@@ -1,0 +1,16 @@
+#!/bin/sh
+
+LAYOUT=$(echo "Tall\nRTall\nWide\nRWide\nGrid\nRGrid\nEven\nTiled\nMonocle" | dmenu -l 10 -i -p "Choose Layout")
+
+case $LAYOUT in
+	Tall) bsp-layout set tall -- --master-size 0.4 ;;
+	RTall) bsp-layout set rtall -- --master-size 0.4 ;;
+	Wide) bsp-layout set wide -- --master-size 0.4 ;;
+	RWide) bsp-layout set rwide -- --master-size 0.4 ;;
+	Grid) bsp-layout set grid -- --master-size 0.4 ;;
+	RGrid) bsp-layout set rgrid -- --master-size 0.4 ;;
+	Even) bsp-layout set even -- --master-size 0.4 ;;
+	Tiled) bsp-layout set tiled -- --master-size 0.4 ;;
+	Monocle) bsp-layout set monocle -- --master-size 0.4 ;;
+esac
+

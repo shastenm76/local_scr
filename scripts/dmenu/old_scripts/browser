@@ -1,0 +1,15 @@
+#!/bin/sh
+
+script=$(echo "Ferdi\nFranz\nJitsi\nLBRY\nSlack\nSocial_Manager\nTeams\nWhatsapp\nZoom" | dmenu -l 25 -i -p "Elige: ")
+
+case $script in
+    Ferdi) cd ~/.local/bin/app-image/ && ./Ferdi-5.4.4-beta.2.AppImage ;;
+    Franz) cd ~/.local/bin/app-image/ && ./Franz-5.5.0.AppImage ;;
+    Jitsi) cd ~/.local/bin/app-image/ && ./jitsi-meet-x86_64.AppImage ;;
+    LBRY) cd ~/.local/bin/app-image/ && ./LBRY_0.39.0.AppImage ;;
+    Slack) cd ~/.local/bin/app-image/ && ./Slack-0-Build32.2.glibc2.17-x86_64.AppImage ;;
+    Social_Manager) cd ~/.local/bin/app-image/ && ./Social.Manager.Tools-0.6.5.AppImage ;;
+    Teams) cd ~/.local/bin/app-image/ && ./teams-for-linux-1.0.5.AppImage ;;
+    Whatsapp) cd ~/.local/bin/app-image/ && ./whatsapp-for-linux-1.4.0-x86_64.AppImage ;;
+    Zoom) cd ~/.local/bin/app-image/ && ./Zoom-5.7.31792.0820.glibc2.17-x86_64.AppImage ;;
+esac

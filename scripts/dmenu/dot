@@ -1,0 +1,23 @@
+#!/bin/bash
+# source ~/.local/bin/scripts/dmenu/terminal
+TERMINAL = st
+
+declare config=("Alacritty
+Bashrc
+Bspwmrc
+Neovim
+Sxhkdrc
+Xresources")
+
+dot=$(echo "${config[@]}" | dmenu -l 10 -i -p "Elige El Dotfile:")
+
+ case $dot in
+    Alacritty)$TERMINAL ~/.config/alacritty/alacritty.yml ;;
+	Bashrc)$TERMINAL nvim ~/.bashrc ;;
+	Bspwmrc)$TERMINAL nvim ~/.config/bspwm/bspwmrc ;;
+    Neovim)$TERMINAL nvim ~/.config/nvim/init.vim ;;
+	Sxhkdrc)$TERMINAL nvim ~/.config/sxhkd/sxhkdrc ;;
+	Xresources)$TERMINAL nvim ~/.Xresources ;;
+	*)
+esac    # --- end of case ---
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+script=$(echo "Docs\nDot\nMan\nPDF" | dmenu -l 30 -i -p "Elige Script:")
+
+case $script in
+  Docs) /bin/sh ~/.local/bin/scripts/dmenu/docs ;;
+  Dot) /bin/sh ~/.local/bin/scripts/dmenu/dot ;;
+  Man) /bin/sh ~/.local/bin/scripts/dmenu/man ;;
+  PDF) /bin/sh ~/.local/bin/scripts/dmenu/pdf ;;
+esac
